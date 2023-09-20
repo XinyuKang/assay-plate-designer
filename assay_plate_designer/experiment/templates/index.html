@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible content=" IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'experiment/style.css' %}">
+</head>
+
+
+<body>
+    <div class="main-container">
+        <div class="row">
+            
+            <h1>Plates  <span class="plus"><a href="createMember" style="text-decoration:none" >
+                <span>&#43;</span>
+            </a></span> </h1>
+            <h3>You have {{ plates|length }} plates in total.</h3>
+        </div>
+    </div>
+
+
+
+    {% for plate in plates %}
+    <div class="container">
+        <div class="row">
+
+            <a href="editPlate/{{ plate.id }}" style="text-decoration:none">
+                <div class="name"> {{ plate.name }} </div>
+            </a>
+            <!-- TODO <div class="detail">Empty wells available: {{ plate. }}</div> -->
+
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+
+</body>
+
+</html>

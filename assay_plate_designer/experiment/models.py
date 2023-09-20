@@ -7,6 +7,7 @@ from django.core.validators import MinLengthValidator, MaxLengthValidator, Regex
 class Plate(models.Model):
     # Define a plate
     name = models.CharField(max_length=100)
+    id = models.AutoField(primary_key=True) # unique plate id
 
 class Well(models.Model):
     # Define a well

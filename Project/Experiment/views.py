@@ -26,7 +26,7 @@ class PlateCreateView(CreateView):
         for row in range(row_count):
             for col in range(col_count):
                 Well.objects.create(
-                    reagent="R"+'{:0d}'.format(self.object.id)+str(row)+str(col),
+                    # reagent="R"+'{:0d}'.format(self.object.id)+str(row)+str(col),
                     plate=self.object, row=row, col=col
                 )
     
@@ -56,12 +56,6 @@ class PlateDetailView(View):
             well['color'] = "white"
             if well.get("reagent", "") != "" or well.get("antibody" ,"") not in ["empty", ""] or well.get("concentration", 0.0) != 0.0:
                 well['color'] = "green"
-            # if well.get("antibody" ,"") in ["empty", ""]:
-            #     well['color'] = "white"
-            # if well.get("concentration", 0.0) < 0.1:
-            #     well['color'] = "white"
-            # if well.get("reagent", "") == "":
-            #     well['color'] = "white"
             if well.get("plate__type", "") == "96":
                 well['width'] = "12"
             else:
@@ -118,15 +112,6 @@ class WellUpdateView(UpdateView):
         if antibody_value != "empty" and antibody_value != "":
             if any(s not in aminoacid_lst for s in antibody_value):
                 form.add_error('antibody', "The Antibody symbol is not valid, see https://en.wikipedia.org/wiki/Amino_acid for a list of valid 1-letter symbols")
-
-
-        # if len(antibody_value) >= 20 and len(antibody_value) <= 40:
-        #     if concentration_value < 0.1:
-        #         form.add_error('concentration', "Concentration should be greater than 0.1")
-        #         return self.form_invalid(form)
-        # else:
-        #     form.add_error('antibody', "Length of Antibody should be between 20 and 40")
-        #     return self.form_invalid(form)
 
         try:
             reagent_validator(reagent_value)

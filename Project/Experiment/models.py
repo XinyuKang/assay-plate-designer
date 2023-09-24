@@ -13,10 +13,10 @@ class Plate(models.Model):
 
 
 class Well(models.Model):
-    reagent = models.CharField(max_length=100)
-    antibody = models.CharField(max_length=40, default="empty", blank=True)
+    reagent = models.CharField(max_length=100, default="", blank=True)
+    antibody = models.CharField(max_length=40, default="", blank=True)
     concentration = models.FloatField(default="0.0")
-    plate = models.ForeignKey(Plate, on_delete=models.CASCADE)
+    plate = models.ForeignKey(Plate, on_delete=models.CASCADE, default="", blank=True)
     row = models.IntegerField()
     col = models.IntegerField()
 

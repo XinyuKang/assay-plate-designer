@@ -1,2 +1,0 @@
-Activate virtual env - source venv/bin/activate
-Runserver - python3 manage.py runserver

@@ -1,9 +1,36 @@
 # assay-plate-designer
-A full-stack web application designed to assist scientists in planning and managing their experiments using assay plates. The application allows users to create new plates, add information to wells, view well details, edit well information, and delete plates when necessary.
+**assay-plate-designer** full-stack web application designed to assist scientists in planning and managing their experiments using assay plates. Key features include:
+- Create new plates
+- Add information to wells
+- View well details
+- Edit well information
+- Delete plates
 
+## Pre-requirements
+- Operating System: Linux
+- Language: Python3 (>=3.10)
+- Framework: Django with class-based views
 
-## Navigation of the django project folders
-*templates* contains th html files
-*static* contains the css files
+### Installation Steps
+1. Ensure your Linux environment is properly set up.
+2. Install Python3 (>=3.10), pip, and [Django](https://docs.djangoproject.com/en/4.2/topics/install/).
+3. Install the necessary libraries:
+```
+pip install django-crispy-forms
+pip install crispy-bootstrap5
+```
 
-use the django class-based views to reduce boiler-plate codes.
+## Running the web app (on Linux)
+1. Navigate to the *Project* directory 
+```
+cd path/to/Project
+```
+2. Activate the virtual environment:
+```
+source ./venv/bin/activate
+```
+3. Run the Django server:
+```
+python3 manage.py runserver
+```
+4. Open your web browser and navigate to the displayed HTTP link. You should see the main Django Plate web page.

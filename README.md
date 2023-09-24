@@ -34,3 +34,11 @@ source ./venv/bin/activate
 python3 manage.py runserver
 ```
 4. Open your web browser and navigate to the displayed HTTP link. You should see the main Django Plate web page.
+
+## Visualization Overview of the Web App
+1. The main Django Plate page: The starting point and main dashboard.
+![Alt text](image.png)
+2. Create Plate: Allows users to design and set up a new plate.
+![Alt text](image-1.png)
+3. Edit Plate: Lets users modify the content and details of an existing plate.
+![Alt text](image-2.png)

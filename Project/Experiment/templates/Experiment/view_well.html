@@ -1,0 +1,29 @@
+{% extends './base.html' %}
+{% block content %}
+    <div>
+        <a class="btn btn-outline-secondary" href={% url 'Experiment:detail' well.plate_id %}>Back</a>
+        <a class="btn btn-outline-secondary" href={% url 'Experiment:edit_well' well.id %}>Update</a>
+        <h1 class="p-3">Well ({{well}})</h1>
+
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputFirstName">Reagent</label>
+            <p class="form-control" id="inputFirstName">{{well.reagent}}</p>
+        </div>
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputFirstName">Antibody</label>
+            <p class="form-control" id="inputFirstName">{{well.antibody}}</p>
+        </div>
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputFirstName">Concentration</label>
+            <p class="form-control" id="inputFirstName">{{well.concentration}}</p>
+        </div>
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputFirstName">Row</label>
+            <p class="form-control" id="inputFirstName">{{well.row}}</p>
+        </div>
+        <div class="col-md-6">
+            <label class="small mb-1" for="inputFirstName">Col</label>
+            <p class="form-control" id="inputFirstName">{{well.col}}</p>
+        </div>
+    </div>
+{% endblock %}

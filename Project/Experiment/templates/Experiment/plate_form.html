@@ -1,0 +1,12 @@
+{% extends './base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <a class="btn btn-outline-secondary" href={% url 'Experiment:index' %}>Back</a>
+  <form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-success">Save plate</button>
+  </form>
+{% endblock %}

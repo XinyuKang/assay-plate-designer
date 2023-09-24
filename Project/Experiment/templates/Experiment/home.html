@@ -1,0 +1,14 @@
+{% extends './base.html' %}
+{% block content %}
+    <a class="btn btn-outline-secondary" href={% url 'Experiment:create' %}>Create Plate</a>
+    <h1 class="mt-2">List of Plates</h1>
+        <div class="row">
+            {% for plate in plates %}
+                <div class="col-3">
+                    <a class="btn btn-outline-secondary p-3 m-3 w-100" href="{% url 'Experiment:detail' plate.id %}">
+                        {{ plate.name }}
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+{% endblock %}

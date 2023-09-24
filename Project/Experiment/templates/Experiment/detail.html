@@ -1,0 +1,14 @@
+{% extends './base.html' %}
+{% block content %}
+    <a class="btn btn-outline-secondary" href={% url 'Experiment:index' %}>Back</a>
+    <a class="btn btn-outline-secondary" href={% url 'Experiment:delete' plate_id%}>Delete Plate</a>
+    <h1 class="mt-2">List of Well in Plate</h1>
+    <h3> PLate name - {{plate_name}} </h3>
+    <div class="row mt-5">
+        {% for well in wells %}
+            <a class="m-0 p-1 text-center" style="background-color: {{well.color}}; width:{{well.width}}%; border:1px solid black; font-size:10px; color:black;" href="{% url 'Experiment:view_well' well.id %}">
+                    {{ well.row }} | {{well.col}}
+            </a>
+        {% endfor %}
+    </div>
+{% endblock %}

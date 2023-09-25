@@ -45,6 +45,7 @@ python3 manage.py runserver
 
 ## API endpoints
 To interact with the assay-plate-designer web app, here are the available API endpoints:
+
 Main Endpoint:
 - GET http://127.0.0.1:8000/
 

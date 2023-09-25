@@ -42,3 +42,17 @@ python3 manage.py runserver
 ![Alt text](image-1.png)
 3. Edit Plate: Lets users modify the content and details of an existing plate.
 ![Alt text](image-2.png)
+
+## API endpoints
+To interact with the assay-plate-designer web app, here are the available API endpoints:
+Main Endpoint:
+- GET http://127.0.0.1:8000/
+
+Plate Operations:
+- POST http://127.0.0.1:8000/create - Create a new plate.
+- POST http://127.0.0.1:8000/delete/int:pk - Delete a plate by its primary key (pk).
+- GET http://127.0.0.1:8000/detail/int:plate_id - View plate details using plate_id.
+
+Well Operations:
+- GET http://127.0.0.1:8000/view_well/int:well_id - View well details by well_id.
+- POST http://127.0.0.1:8000/edit_well/int:pk - Edit well details by its primary key (pk).
